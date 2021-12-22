@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Phonebook:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Phonebook_jar</output-path>
+    <root id="archive" name="Phonebook.jar">
+      <element id="module-output" name="Phonebook" />
+    </root>
+  </artifact>
+</component>
