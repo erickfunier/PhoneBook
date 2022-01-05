@@ -26,6 +26,9 @@ PhoneBook
      
     java -jar Phonebook.jar
 
+<h2>CI</h2>
+<p>The CI solution is implemented with Maven and the Github Actions containing the Build, Test and deploy of the .jar application</p>
+
 <h2>Environment development</h2>
 <p>The application is ready to run in IntelliJ IDE (2021.3), you can import the project from the GitHub repository</p>
 
