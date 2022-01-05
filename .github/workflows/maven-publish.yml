@@ -16,7 +16,7 @@ jobs:
             distribution: 'adopt'
             java-package: jdk
       - name: Compile the Project        
-      - run: mvn -B compile
+        run: mvn -B compile
   
   build:
       name: Deploy to JAR file
