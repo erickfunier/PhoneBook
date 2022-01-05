@@ -30,6 +30,8 @@ jobs:
             distribution: 'adopt'
         - name: Generate package
           run: mvn -B package --file pom.xml -DskipTests
+        - name: Copy Jar file
+          run: mkdir staging && cp target/*.jar staging #generate .jar
         - name: Upload arctifact
           uses: actions/upload-artifact@v1
           with:
