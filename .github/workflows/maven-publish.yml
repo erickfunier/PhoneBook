@@ -38,13 +38,12 @@ jobs:
             distribution: 'adopt'
             java-package: jdk            
         - name: Build and test project
-          working-directory: Phonebook
           run: mvn -B verify
         - name: Upload Maven build artifact
           uses: actions/upload-artifact@v2
           with:
             name: Phonebook.jar
-            path: Phonebook/target/Phonebook.jar
+            path: target/Phonebook.jar
  
 
             
