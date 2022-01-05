@@ -3,34 +3,40 @@ name: Java Maven CI
 on: [push]
 
 jobs:
-  buildNTest:
-    name: Build and Run Tests
+  compile:
+    name: Compile Java
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Run Maven Test Java
+      - name: Checkout Source Code
+        uses: actions/checkout@v2
+      - name: Setup Java
         uses: actions/setup-java@v2
         with:
-          java-version: '11'
-          distribution: 'adopt'
-      - run: mvn --batch-mode --update-snapshots verify
+            java-version: '11'
+            distribution: 'adopt'
+            java-package: jdk
+      - name: Compile the Project        
+      - run: mvn -B compile
   
-  deploy:
+  build:
       name: Deploy to JAR file
+      needs: compile
       runs-on: ubuntu-latest
       steps:
-        - working-directory: Phonebook
         - uses: actions/checkout@v2
-        - uses: actions/setup-java@v2
+        - uses: actions/setup-java@v2        
           with:
             java-version: '11'
             distribution: 'adopt'
-        - run: mvn -B package --file pom.xml -DskipTests
-        - run: mkdir staging && cp target/*.jar staging #generate .jar
-        - uses: actions/upload-artifact@v1
+            java-package: jdk            
+        - name: Build and test project
+          working-directory: Phonebook
+          run: mvn -B verify
+        - name: Upload Maven build artifact
+          uses: actions/upload-artifact@v2
           with:
-            name: Phonebook
-            path: staging
+            name: Phonebook.jar
+            path: Phonebook/target/Phonebook.jar
  
 
             
