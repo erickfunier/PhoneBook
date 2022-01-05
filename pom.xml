@@ -35,6 +35,15 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
+                <configuration>
+                    <archive>
+                    <manifest>
+                        <addClasspath>true</addClasspath>
+                        <classpathPrefix>lib/</classpathPrefix>
+                        <mainClass>com.erickfunier.Main</mainClass>
+                    </manifest>
+                    </archive>
+                </configuration>
             </plugin>
         </plugins>
     </build>
