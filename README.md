@@ -16,6 +16,12 @@ PhoneBook
 </p>
 
 <h2>Running the application</h2>
+<h3>With Docker</h3>
+
+    docker build -t phonebook .
+    docker run --rm -ti phonebook
+
+<h3>With JRE</h3>
 <p>Run the .jar file from the folder from root project folder</p>
      
     java -jar Phonebook.jar
