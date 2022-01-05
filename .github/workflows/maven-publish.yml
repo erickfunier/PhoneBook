@@ -36,4 +36,4 @@ jobs:
           uses: actions/upload-artifact@v1
           with:
             name: Phonebook
-            path: target/Phonebook.jar
+            path: staging
