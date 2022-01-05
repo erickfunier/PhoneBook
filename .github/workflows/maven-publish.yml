@@ -42,8 +42,8 @@ jobs:
         - name: Upload Maven build artifact
           uses: actions/upload-artifact@v2
           with:
-            name: Phonebook
-            path: ./Phonebook.jar
+            name: Phonebook.jar
+            path: ./
  
 
             
