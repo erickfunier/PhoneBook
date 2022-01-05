@@ -25,6 +25,12 @@ jobs:
       steps:
         - name: Checkout Source Code
           uses: actions/checkout@v2
+        - uses: actions/cache@v2
+          with:
+            path: ~/cache
+            key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+            restore-keys: |
+              ${{ runner.os }}-maven-
         - name: Setup Java
           uses: actions/setup-java@v2        
           with:
